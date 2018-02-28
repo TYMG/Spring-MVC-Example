@@ -1,0 +1,1 @@
+[Bootstrap a Spring MVC App](http://www.codejava.net/frameworks/spring/bootstrapping-a-spring-web-mvc-application-programmatically)

@@ -1,0 +1,8 @@
+/build/
+/target/
+/target/*
+/Users/
+org.*
+.classpath
+.project
+.jsdtscope
