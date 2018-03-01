@@ -8,15 +8,13 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import green.com.Message;
 import green.com.manager.MessagesManager;
+import green.com.model.Message;
 
 /**
  * Handles requests for the application home page.
@@ -37,7 +35,9 @@ public class MessagesController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String viewMessages(Model model, HttpServletRequest request) {
-	    if(model.containsAttribute(MSG)){
+		Map modelMap = model.asMap();
+		List<Message> msgs = (List<Message>) modelMap.get(MSG);
+	    if(msgs == null){
 	    	model.addAttribute(MSG, messageManager.getMessages());
 	    }
 		return "messages";
