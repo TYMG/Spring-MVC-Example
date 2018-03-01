@@ -20,7 +20,7 @@ import org.springframework.web.client.RestTemplate;
 import green.com.model.Message;
 
 /**
- * 
+ * Message Manager
  * 
  * @author GreenMachine
  *
